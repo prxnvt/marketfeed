@@ -32,7 +32,11 @@ class Bar:
             raise ValueError("volume is negative")
 
         if self.high < self.low:
+<<<<<<< HEAD
             raise ValueError("high is less than Low")
+=======
+            raise ValueError("high is less than low")
+>>>>>>> 2a9da47 (Fixed typo)
 
         if self.high < self.open:
             raise ValueError("high is less than open")
