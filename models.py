@@ -14,12 +14,10 @@ class Bar:
     def __post_init__(self) -> None:
         if not self.symbol.strip():
             raise ValueError("symbol is empty")
-
         if self.timestamp.tzinfo is None:
             raise ValueError("timestamp is not timezone-aware")
         if self.timestamp.utcoffset() != timedelta(0):
             raise ValueError("timestamp is not UTC")
-
         if self.open <= 0.0:
             raise ValueError("open is negative")
         if self.high <= 0.0:
@@ -30,14 +28,8 @@ class Bar:
             raise ValueError("close is negative")
         if self.volume < 0:
             raise ValueError("volume is negative")
-
         if self.high < self.low:
-<<<<<<< HEAD
-            raise ValueError("high is less than Low")
-=======
             raise ValueError("high is less than low")
->>>>>>> 2a9da47 (Fixed typo)
-
         if self.high < self.open:
             raise ValueError("high is less than open")
         if self.high < self.close:
@@ -58,12 +50,10 @@ class Quote:
     def __post_init__(self) -> None:
         if not self.symbol.strip():
             raise ValueError("symbol is empty")
-
         if self.timestamp.tzinfo is None:
             raise ValueError("timestamp is not timezone-aware")
         if self.timestamp.utcoffset() != timedelta(0):
             raise ValueError("timestamp is not UTC")
-
         if self.bid <= 0.0:
             raise ValueError("bid is negative")
         if self.ask <= 0.0:
