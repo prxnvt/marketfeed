@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 
 
-@dataclass(frozen = True)
+@dataclass(frozen=True)
 class Bar:
     symbol: str
     timestamp: datetime
@@ -19,15 +19,15 @@ class Bar:
         if self.timestamp.utcoffset() != timedelta(0):
             raise ValueError("timestamp is not UTC")
         if self.open <= 0.0:
-            raise ValueError("open is negative")
+            raise ValueError("open isn't positive")
         if self.high <= 0.0:
-            raise ValueError("high is negative")
+            raise ValueError("high isn't positive")
         if self.low <= 0.0:
-            raise ValueError("low is negative")
+            raise ValueError("low isn't positive")
         if self.close <= 0.0:
-            raise ValueError("close is negative")
+            raise ValueError("close isn't positive")
         if self.volume < 0:
-            raise ValueError("volume is negative")
+            raise ValueError("volume isn't positive")
         if self.high < self.low:
             raise ValueError("high is less than low")
         if self.high < self.open:
@@ -39,7 +39,7 @@ class Bar:
         if self.low > self.open:
             raise ValueError("low is higher than open")
 
-@dataclass(frozen = True)
+@dataclass(frozen=True)
 class Quote:
     symbol: str
     timestamp: datetime
@@ -55,13 +55,12 @@ class Quote:
         if self.timestamp.utcoffset() != timedelta(0):
             raise ValueError("timestamp is not UTC")
         if self.bid <= 0.0:
-            raise ValueError("bid is negative")
+            raise ValueError("bid isn't positive")
         if self.ask <= 0.0:
-            raise ValueError("ask is negative")
+            raise ValueError("ask isn't positive")
         if self.bid_size < 0:
-            raise ValueError("bid_size is negative")
+            raise ValueError("bid_size isn't positive")
         if self.ask_size < 0:
-            raise ValueError("ask_size is negative")
-
+            raise ValueError("ask_size isn't positive")
         if self.ask < self.bid:
             raise ValueError("ask is less than bid")

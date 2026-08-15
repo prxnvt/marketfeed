@@ -1,0 +1,5 @@
+{"symbol": "AAPL", "timestamp": "2024-01-02T14:30:00Z", "open": 187.15, "high": 188.44, "low": 183.89, "close": 185.64, "volume": 82488700}
+{"symbol": "AAPL", "timestamp": "2024-01-03T14:30:00Z", "open": 184.22, "high": 185.88, "low": 183.43, "close": 184.25, "volume": 58414500}
+
+{"symbol": "MSFT", "timestamp": "2024-01-02T14:30:00Z", "open": 373.86, "high": 375.90, "low": 366.50, "close": 370.87, "volume": 25258600}
+{"symbol": "MSFT", "timestamp": "2024-01-03T14:30:00Z", "open": 370.06, "high": 373.26, "low": 368.68, "close": 370.60, "volume": 23083500}
